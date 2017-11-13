@@ -1,0 +1,29 @@
+//  Write some awesome Swift code, or import libraries like "Foundation",
+//  "Dispatch", or "Glibc"
+
+var str = "The five boxing wizards jump quickly"
+var status = false
+
+
+func Pangram_check(input_sentence: String) -> Bool {
+	var c: Character
+	var alphabet: String = "ABCDEFGHIKLMNOPQRSTUVXYZ"
+	for c in alphabet.characters {
+		if(input_sentence.index(of: c) < 0 || input_sentence.index(of : (c+32)) < 0) {
+			return false;
+		}
+		
+		else {
+			return true;
+		}
+	}
+}
+
+status = Pangram_check(input_sentence: str);
+
+if(status == true){
+	print("Pangram")
+}
+else {
+	print("Not pangram")
+}
