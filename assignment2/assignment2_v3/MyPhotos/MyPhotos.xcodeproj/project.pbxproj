@@ -17,6 +17,8 @@
 		946DDAFF1FE62116000E97B7 /* ViewListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DDAFE1FE62116000E97B7 /* ViewListTableViewCell.swift */; };
 		946DDB051FE62E89000E97B7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DDB041FE62E89000E97B7 /* Product.swift */; };
 		946DDB071FE634B9000E97B7 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DDB061FE634B9000E97B7 /* ProductTableViewController.swift */; };
+		94D0E06C1FE6734D004C3DBA /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0E06B1FE6734D004C3DBA /* LeftViewController.swift */; };
+		94D0E06E1FE6735F004C3DBA /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0E06D1FE6735F004C3DBA /* RightViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		946DDAFE1FE62116000E97B7 /* ViewListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListTableViewCell.swift; sourceTree = "<group>"; };
 		946DDB041FE62E89000E97B7 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		946DDB061FE634B9000E97B7 /* ProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		94D0E06B1FE6734D004C3DBA /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		94D0E06D1FE6735F004C3DBA /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				946DDAD01FE5F13C000E97B7 /* ProductViewController.swift */,
 				946DDAFE1FE62116000E97B7 /* ViewListTableViewCell.swift */,
 				946DDAD21FE5F13C000E97B7 /* Main.storyboard */,
+				94D0E06B1FE6734D004C3DBA /* LeftViewController.swift */,
+				94D0E06D1FE6735F004C3DBA /* RightViewController.swift */,
 				946DDB041FE62E89000E97B7 /* Product.swift */,
 				946DDB061FE634B9000E97B7 /* ProductTableViewController.swift */,
 				946DDAD51FE5F13C000E97B7 /* Assets.xcassets */,
@@ -269,8 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				946DDAFF1FE62116000E97B7 /* ViewListTableViewCell.swift in Sources */,
+				94D0E06E1FE6735F004C3DBA /* RightViewController.swift in Sources */,
 				946DDAD11FE5F13C000E97B7 /* ProductViewController.swift in Sources */,
 				946DDB051FE62E89000E97B7 /* Product.swift in Sources */,
+				94D0E06C1FE6734D004C3DBA /* LeftViewController.swift in Sources */,
 				946DDB071FE634B9000E97B7 /* ProductTableViewController.swift in Sources */,
 				946DDACF1FE5F13C000E97B7 /* AppDelegate.swift in Sources */,
 			);

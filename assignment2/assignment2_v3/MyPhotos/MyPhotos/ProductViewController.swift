@@ -34,7 +34,7 @@ class ProductViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let desc = photoName.text ?? ""
         let photo = photoImageView.image
         
-        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        // Set the product to be passed to ProductTableViewController after the unwind segue.
         product = Product(desc: desc, photo: photo)
     }
     
@@ -58,8 +58,24 @@ class ProductViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         //Handle the ext field's user input through delegate callbacks
         photoName.delegate = self
         
+        // Set up views if editing an existing Meal.
+        if let product = product {
+            navigationItem.title = product.desc
+            photoName.text = product.desc
+            photoImageView.image = product.photo
+        }
+        
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
+        
+        //gesture left and right
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        leftSwipe.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(leftSwipe)
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(rightSwipe)
     }
     
 
@@ -80,7 +96,18 @@ class ProductViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-         dismiss(animated: true, completion: nil)
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddProductMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddProductMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+            fatalError("The ProductViewController is not inside a navigation controller.")
+        }
     }
 
 
@@ -138,10 +165,19 @@ class ProductViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let text = photoName.text ?? ""
         saveBtn.isEnabled = !text.isEmpty
     }
-    
-    
-    
-    
-    
+
+}
+
+extension UIViewController {
+    func swipeAction(swipe: UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            performSegue(withIdentifier: "goLeft", sender: self)
+        case 2:
+            performSegue(withIdentifier: "goRight", sender: self)
+        default:
+            break
+        }
+    }
 }
 

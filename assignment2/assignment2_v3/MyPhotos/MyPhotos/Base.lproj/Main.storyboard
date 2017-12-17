@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P1S-Hm-48D" id="AKM-Ye-60E">
-                                    <frame key="frameInset" width="375" height="89"/>
+                                    <frame key="frameInset" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_me" translatesAutoresizingMaskIntoConstraints="NO" id="055-gA-yWE">
@@ -40,6 +40,7 @@
                                 <connections>
                                     <outlet property="desc" destination="FR5-yA-UFV" id="Oc5-em-Xuo"/>
                                     <outlet property="photoView" destination="055-gA-yWE" id="miA-zM-MTA"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="IO5-aN-fah"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -51,7 +52,7 @@
                     <navigationItem key="navigationItem" title="Photo List" id="OmO-or-e16">
                         <barButtonItem key="rightBarButtonItem" title="+" id="JKl-Vu-ebk">
                             <connections>
-                                <segue destination="c7q-L6-mtP" kind="show" identifier="addItem" id="5jQ-0r-6Hs"/>
+                                <segue destination="c7q-L6-mtP" kind="show" identifier="AddItem" id="5jQ-0r-6Hs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -63,6 +64,13 @@
         <!--New Photo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <exit id="qdu-5t-ebW" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="o1n-Mr-qCX">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="rMn-qu-fjI"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <viewController id="BYZ-38-t0r" customClass="ProductViewController" customModule="MyPhotos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -81,12 +89,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3w-rR-yjt">
-                                                <state key="normal" title="Add photo from Library"/>
-                                                <connections>
-                                                    <action selector="addPhotoBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cxG-nG-dir"/>
-                                                </connections>
-                                            </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="add_me" translatesAutoresizingMaskIntoConstraints="NO" id="lMB-P7-8Qw">
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -106,6 +108,9 @@
                                                 </connections>
                                             </imageView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="LdO-6h-VTk" secondAttribute="trailing" id="idj-wW-qzp"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -135,15 +140,8 @@
                         <outlet property="saveBtn" destination="Stk-ZY-LsO" id="Vph-Do-mI2"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="qdu-5t-ebW" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="o1n-Mr-qCX">
-                    <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="rMn-qu-fjI"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2279.1999999999998" y="121.88905547226388"/>
+            <point key="canvasLocation" x="2238" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zZF-fP-66m">
@@ -179,10 +177,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kNn-ek-wek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="121.88905547226388"/>
+            <point key="canvasLocation" x="1455" y="-337"/>
         </scene>
     </scenes>
     <resources>
         <image name="add_me" width="640" height="360"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IO5-aN-fah"/>
+    </inferredMetricsTieBreakers>
 </document>
