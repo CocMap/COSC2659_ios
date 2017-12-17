@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  MyPhotos
 //
-//  Created by Tran, Tran Le Nha on 12/16/17.
+//  Created by Tran, Tran Le Nha on 12/17/17.
 //  Copyright © 2017 Tran, Tran Le Nha. All rights reserved.
 //
 

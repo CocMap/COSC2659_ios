@@ -11,6 +11,12 @@ import XCTest
 
 class MyPhotosTests: XCTestCase {
     
+    //-----MARK: Photo class test-----
+    // Confirm that the Meal initializer returns a Meal object when passed valid parameters.
+//    func testMealInitializationSucceeds() {
+//        
+//    }
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
